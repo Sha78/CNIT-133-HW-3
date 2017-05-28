@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CNIT 133 HW 3, Pt 6 - Functions</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This page has a program that will help an elementary school student learn multiplication.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background-color:lightblue;
+        }
+        nav{
+             background-color:grey;
+             margin:0% 15%;
+            padding-left:10%;
+            border:3px solid black
+        }
+        ul{
+            position:relative;
+            display: inline-block;
+            margin: 20px;
+           
+        }
+        li{
+            list-style-type: none;
+           
+        }
+        a{
+             text-decoration: none;
+            font-weight:bold;
+        }
+        h1{
+            text-align:center;
+        }
+        table{
+            background-color:grey;
+              width:30%;
+              height:500px;
+              padding-left:0%;
+            position:absolute;
+             margin-left:15px;
+        }
+        tr{
+            
+           margin-top:5px;
+        }
+          .link{
+           border: 1px solid black;
+               padding:0px 10px;
+             
+        }
+        td:first-of-type{
+            border: 1px solid black;
+            padding:0px 20px;
+            font-size:18px;
+            font-weight:bold;
+        }
+        .wrapper{
+            background-color:grey;
+              width:65%;
+              height:485px;
+              padding:5px;
+              margin-right:15px;
+            float:right;
+            position: relative;
+            border: 3px solid black;
+        }
+        h2{
+            font-size:25px;
+            font-weight: bold;
+            text-align: center;
+            padding:50px;
+        }
+         footer {
+                width: 100%;
+                height: 60px;
+                position: fixed;
+                bottom: 0;
+                color: black;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+    </style>
+
+
+</head>
+
+<body>      
+        
+           
+    
+    <nav>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw1">HW 1</a></li>
+        </ul>
+        <ul>
+           <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw2">HW2</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw3">HW-3</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw4">HW-4</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw5"HW-5</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw6"HW-6</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw7.html">HW-7</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw8.html">HW-8</a></li>
+        </ul>
+
+    </nav>
+    
+   <h1>CNIT 133 Homework 3 - Functions</h1>
+    <table>
+        <tr>
+           <td><a href="part1.html">Part: 1</a></td>
+            <td class="link">This page contains script that inputs a student's homework average, mid-term exam score, final exam score, and ACR. </td>
+        </tr>
+        <tr>
+            <td><a href="part2.html">Part: 2</a></td>
+            <td class="link">This page Inputs the number of items sold by a salesman for each item number sold for last week, calculates how 
+                much <br>the salesperson sold and how much they earned, and then outputs the results.</td>
+        </tr>
+        <tr>
+            <td><a href="part3.html">Part: 3</a></td>
+            <td class="link"> This page contains a script that will determine whether a department-store customer has exceeded the credit 
+                limit <br>on their charge account.</td>
+        </tr>
+        <tr>
+            <td><a href="part4.html">Part: 4</a></td>
+            <td class="link">Contains a script that inputs a five-digit integer (not starting with zero) that determines and outputs a message stating<br> whether or not it's a palindrome.</td>
+        </tr>
+        <tr>
+           <td><a href="part5.html">Part: 5</a></td>
+            <td class="link">This page has functions to write a script that enables the user to enter either a Fahrenheit or a Celsius temperature and <br>displays the Celsius or Fahrenheit equivalent.</td>
+        </tr>
+        <tr>
+            <td><a href="part6.html">Part: 6</a></td>
+            <td class="link">This page has a program that will help an elementary school student learn multiplication.</td>
+        </tr>
+    </table>
+    <div class="wrapper">
+    <h2>Part 6: Learn Multiplication</h2>
+      <form id="aForm">
+<p id="question"></p>
+<input name="name" type="text" size="5"> 
+    <br>      
+<button type="button" onclick="timesIt()">Check</button>
+</form>
+        <p id="results"></p>
+    </div>
+     
+    <script>
+
+     
+num1=Math.floor(Math.random()*10+0);
+num2=Math.floor(Math.random()*10+0);
+document.getElementById("question").innerHTML=num1+" x "+num2+" =";
+      
+ 
+
+    
+function timesIt() {
+var x,y,name,a,b,answer;
+
+x=document.getElementById("aForm") ;
+y=x.elements["name"].value;
+    
+if (y==num1*num2) {
+//document.getElementById("results").innerHTML="Very good!";
+    alert("Very Good! Click ok if you wish to continue.");
+    window.location.reload();
+     
+} 
+     else {
+//document.getElementById("results").innerHTML="No. Please try again.";
+         alert("No. Please try again. Click ok if you wish to continue.")
+        document.getElementById("aForm").reset();
+}
+}
+             
+    </script>
+    <footer> <span><a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">
+            <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F" target="_blank">
+            <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="31" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+            </a></span></footer>
+</body>
+
+</html>
+
+<!--Part 6:
+
+Computers are playing an increasing role in education. Write a program that will help an elementary school student learn multiplication. Use Math.random to produce two one-digit integers (0-9). It should then display a question such as:
+
+How much is 6 times 7?
+
+The student then types the answer into a text field. Your program checks the student's answer. If it is correct, display the string "Very good!" in an alert or directly on the page, and then prompt the user to see whether they wish to continue by using the confirm statement. If true, then generate a new question. If not, then exit the script.
+
+If the answer to the multiplication question is wrong, display the string "No. Please try again." in an alert or directly on the page, and let the student try the same question again repeatedly until the student finally gets it right. A separate function should be used to generate each new question. This function should be called once when the script begins execution and each time the user answers the question correctly. Note that whether the answer is correct or not, you should clear the answer box after the question is answered. -->
+    

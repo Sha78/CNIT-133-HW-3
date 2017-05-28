@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CNIT 133 HW 3, Pt 3 - Functions</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This page contains a script that will determine whether a department-store customer has exceeded the credit limit on their charge account.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            background-color: lightblue;
+        }
+        
+        nav {
+            background-color: grey;
+            margin: 0% 15%;
+            padding-left: 10%;
+            border: 3px solid black
+        }
+        
+        ul {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        table {
+            background-color: grey;
+            width: 30%;
+            height: 500px;
+            padding-left: 0%;
+            position: absolute;
+            margin-left: 15px;
+        }
+        
+        tr {
+            margin-top: 5px;
+        }
+        
+        .link {
+            border: 1px solid black;
+            padding: 0px 10px;
+        }
+        
+        td:first-of-type {
+            border: 1px solid black;
+            padding: 0px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .wrapper {
+            background-color: grey;
+            width: 65%;
+            height: 585px;
+            padding: 5px;
+            margin-right: 15px;
+            float: right;
+            position: relative;
+            border: 3px solid black;
+        }
+        
+        h2 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 0px;
+        }
+        
+        form {
+            background-color: bisque;
+            padding: 10px;
+        }
+        
+        footer {
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            bottom: 0;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        textarea{
+            width:200px;
+            height:60px
+        }
+        
+    
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#Cbutton").click(function(){
+        $("#newCbal").css({
+            "color": "white",
+            "background-color": "black",
+            "font-family": "Arial",
+            "font-size": "20px",
+            "padding": "5px",
+            "font-weight":"bold"
+        });
+    });
+});
+</script>
+
+</head>
+
+<body> 
+        
+
+    <nav>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw1">HW 1</a></li>
+        </ul>
+        <ul>
+             <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw2">HW2</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw3">HW-3</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw4">HW-4</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw5">HW-5</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw6">HW-6</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw7.html">HW-7</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw8.html">HW-8</a></li>
+        </ul>
+
+    </nav>
+
+    <h1>CNIT 133 Homework 3 - Functions</h1>
+    <table>
+        <tr>
+            <td><a href="part1.html">Part: 1</a></td>
+            <td class="link">This page contains script that inputs a student's homework average, mid-term exam score, final exam score, and ACR. </td>
+        </tr>
+      
+        <tr>
+            <td><a href="part2.html">Part: 2</a></td>
+            <td class="link">This page Inputs the number of items sold by a salesman for each item number sold for last week, calculates how much
+                <br>the salesperson sold and how much they earned, and then outputs the results.</td>
+        </tr>
+        <tr>
+            <td><a href="part3.html">Part: 3</a></td>
+            <td class="link"> This page contains a script that will determine whether a department-store customer has exceeded the credit limit
+                <br>on their charge account.</td>
+        </tr>
+        <tr>
+            <td><a href="part4.html">Part: 4</a></td>
+            <td class="link">Contains a script that inputs a five-digit integer (not starting with zero) that determines and outputs a message stating
+                <br> whether or not it's a palindrome.</td>
+        </tr>
+        <tr>
+            <td><a href="part5.html">Part: 5</a></td>
+            <td class="link">This page has functions to write a script that enables the user to enter either a Fahrenheit or a Celsius temperature and
+                <br>displays the Celsius or Fahrenheit equivalent.</td>
+        </tr>
+        <tr>
+            <td><a href="part6.html">Part: 6</a></td>
+            <td class="link">This page has a program that will help an elementary school student learn multiplication.</td>
+        </tr>
+    </table>
+
+    <div class="wrapper">
+        <h2>Part 3: Customer Account</h2>
+        <form>
+            Credit Account Summery Account #:
+            <br>
+            <input type="text" id="actNum">
+            <br> Credit Limit:
+            <br>
+            <input type="text" id="cLimit">
+            <br> Balance at the Beginning of the Month:
+            <br>
+            <input type="text" id="bBal">
+            <br> Total Amount Charged this Month:
+            <br>
+            <input type="text" id="aCharged">
+            <br>Total Amount of Credits Charged this Month:
+            <br>
+            <input type="text" id="cCredits">
+            <br>
+            <br>Summery:
+            <br>
+            <input type="button" onclick="creditBalance()" value="Click for New Balances" id="onChng">
+            <br>
+            <br>The New Balance is:
+            <br>
+            <textarea id="newBal"></textarea>
+            <br>
+            <br>The Credit Balance is:
+            <br>
+            <textarea id="newCbal"></textarea> 
+            <br>
+            <input type="button" id="Cbutton"  name="Cbutton" value="Change">
+        </form>
+    </div>
+    <script>
+        function creditBalance() {
+           var a = document.getElementById("cLimit").value;
+           var b = document.getElementById("bBal").value;
+           var c = document.getElementById("aCharged").value;
+           var d = document.getElementById("cCredits").value;
+            
+            var x = +(b)+ +(c)- -(-d);
+            var y = a - x;
+            
+            if(y <= -1){
+                 alert("You have exceeded your credit limit. Account balance is: " + y)
+                  document.getElementById("newCbal").innerHTML = "You have exceeded your credit limit. Account balance is: " + y;
+            }
+            else if (isNaN(y)){
+                 alert("Invalid Entry. Enter Numbers Only!")
+             }
+            else{
+                document.getElementById("newCbal").innerHTML = "Credit available is: " + y; 
+            }
+            
+              document.getElementById("newBal").innerHTML = x; 
+
+        }
+    </script>
+
+            
+  <footer> <span><a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">
+            <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F" target="_blank">
+            <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="31" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+            </a></span></footer>
+</body>
+
+</html>
+
+<!--Part 3: 
+
+Create a webpage containing a script that will determine whether a department-store customer has exceeded the credit limit on their charge account.
+
+For input, the following facts should be available in form input text boxes:
+
+a) Account number
+b) Balance at the beginning of the month
+c) Total of all items charged by this customer this month
+d) Total of all credits applied to this customer's account this month
+e) Allowed credit limit
+
+Validate whether the account number has been entered and that the amount items are numeric. If there is an error then display an error message using an alert, innerHTML, or jQuery.
+
+Calculate the new balance (which equals beginning balance + charges – credits), and determine whether the new balance exceeds the customer's credit limit and by how much. Then display in a form textarea, the new balance and whether the customer has exceeded their credit limit and by how much, by displaying the message “Credit limit exceeded by X”, where X is the amount the credit limit was exceeded. If the customer is at or under their credit limit then display their new balance and the message "Credit available is X", where X is the amount of their available credit. 
+
+In addition, define a 'Click to change Textarea Display' button at the bottom of the form. Use jQuery to define a ready handler that defines a click event handler for the button, such that clicking the button changes the textarea results to a background color of black and changes the textarea text to a white color, large, and bold-faced.
+
+See this jQuery example: Change multiple CSS properties (Links to an external site.).
+
+Sample Output:
+
+Credit Account Summary Account Number: 1111
+Credit Limit: 1000
+Balance at beginning of month: 300
+Total amount charged this month: 100
+Total amount of credits this month: 50
+Summary: The new balance is 350
+Credit available is 650
+
+Credit Account Summary Account Number: 2222
+Credit Limit: 1000
+Balance at beginning of month: 300
+Total amount charged this month: 1000
+Total amount of credits this month: 100
+Summary: The new balance is 1200
+Credit limit exceeded by 200  -->

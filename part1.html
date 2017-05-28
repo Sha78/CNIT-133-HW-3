@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CNIT 133 HW 3, PT 1 - Functions</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This page contains script that inputs a student's homework average, mid-term exam score, final exam score, and ACR.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            background-color: lightblue;
+        }
+        
+        nav {
+            background-color: grey;
+            margin: 0% 15%;
+            padding-left: 10%;
+            border: 3px solid black
+        }
+        
+        ul {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        table {
+            background-color: grey;
+            width: 30%;
+            height: 500px;
+            padding-left: 0%;
+            position: absolute;
+            margin-left: 15px;
+        }
+        
+        tr {
+            margin-top: 5px;
+        }
+        
+        .link {
+            border: 1px solid black;
+            padding: 0px 10px;
+        }
+        
+        td:first-of-type {
+            border: 1px solid black;
+            padding: 0px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .wrapper {
+            background-color: grey;
+            width: 65%;
+            height: 585px;
+            padding: 5px;
+            margin-right: 15px;
+            float: right;
+            position: relative;
+            border: 3px solid black;
+        }
+        
+        h2{
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            padding: 50px;
+            padding-bottom:5px;
+        }
+           footer {
+                width: 100%;
+                height: 60px;
+                position: fixed;
+                bottom: 0;
+                color: black;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+        #hwAverge, #mtScore, #fnlExam, #ACRone{
+            text-align: right;
+        }
+        
+
+        #panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: lightgreen;
+    border: solid 1px #c3c3c3;
+        
+    
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+       
+    </style>
+    <script>
+        function myfinalScore() {
+            var hwAvg, num1, mtScr, fnlExm, Acr, num2;
+
+            hwAvg = document.getElementById("hwAverge").value;
+            mtScr = document.getElementById("mtScore").value;
+            fnlExm = document.getElementById("fnlExam").value;
+            Acr = document.getElementById("ACRone").value;
+
+            finalav = (.5 * hwAvg) + (.2 * mtScr) + (.2 * fnlExm) + (.1 * Acr);
+            num1 = Math.round(finalav);
+
+            if (isNaN(num1)) {
+                document.getElementById("myFinalGrade").innerHTML = " Enter Numbers Only! ";
+            }
+            else if(finalav >= 90 && finalav <= 100){
+                // finalav = alert("You got an 'A' ");
+                 document.getElementById("myFinalGrade").innerHTML = "Your score is: " + num1 + " You earned an 'A'";
+               
+            }
+            else if(finalav >= 80 && finalav <= 89){
+                 finalav = alert("You got an 'B' ");
+                 document.getElementById("myFinalGrade").innerHTML = "Your score is: " + num1 + " You earned an 'B'";
+                
+            }
+            else if(finalav >= 70 && finalav <= 79){
+                 finalav = alert("You got an 'C' ");
+                 document.getElementById("myFinalGrade").innerHTML = "Your score is: " + num1 + " You earned an 'C'";
+                
+            }
+            else if(finalav >= 60 && finalav <= 69){
+                 finalav = alert("You got an 'D' You must retake the course.");
+                 document.getElementById("myFinalGrade").innerHTML = "Your score is: " + num1 + " You earned an 'D'. You must retake the course!";
+                
+            }
+            else if(finalav >= 0 && finalav <= 59){
+                  finalav = alert("You got an 'F' You must retake the course.");
+                 document.getElementById("myFinalGrade").innerHTML = "Your score is: " + num1 + " You earned an 'F'. You must retake the course!";
+                
+            }
+        }
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+
+</head>
+
+<body>
+
+    <nav> 
+          
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw1">HW 1</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw2">HW2</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw3">HW-3</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw4">HW-4</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw5">HW-5</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw6">HW-6</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw7.html">HW-7</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw8.html">HW-8</a></li>
+        </ul>
+
+    </nav>
+
+    <h1>CNIT 133 Homework 3 - Functions</h1>
+    <table>
+        <tr>
+            <td><a href="part1.html">Part: 1</a></td>
+            <td class="link">This page contains script that inputs a student's homework average, mid-term exam score, final exam score, and ACR. </td>
+        </tr>
+       
+        <tr>
+            <td><a href="part2.html">Part: 2</a></td>
+            <td class="link">This page Inputs the number of items sold by a salesman for each item number sold for last week, calculates how much
+                <br>the salesperson sold and how much they earned, and then outputs the results.</td>
+        </tr>
+        <tr>
+            <td><a href="part3.html">Part: 3</a></td>
+            <td class="link"> This page contains a script that will determine whether a department-store customer has exceeded the credit limit
+                <br>on their charge account.</td>
+        </tr>
+        <tr>
+            <td><a href="part4.html">Part: 4</a></td>
+            <td class="link">Contains a script that inputs a five-digit integer (not starting with zero) that determines and outputs a message stating
+                <br> whether or not it's a palindrome.</td>
+        </tr>
+        <tr>
+            <td><a href="part5.html">Part: 5</a></td>
+            <td class="link">This page has functions to write a script that enables the user to enter either a Fahrenheit or a Celsius temperature and
+                <br>displays the Celsius or Fahrenheit equivalent.</td>
+        </tr>
+        <tr>
+            <td><a href="part6.html">Part: 6</a></td>
+            <td class="link">This page has a program that will help an elementary school student learn multiplication.</td>
+        </tr>
+    </table>
+    <div class="wrapper">
+       <h2>Part 1: Student Grades</h2> 
+        <div id="flip">Click to see instructions!</div>
+<div id="panel">The following webpage calculates a Students Final Grade.
+
+It uses a script that inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers).</div>
+        
+
+        <form id="myForm" name="myForm">
+            HomeWork Average:
+            <br>
+            <input type="text" id="hwAverge">
+            <br> Mid-Term Score:
+            <br>
+            <input type="text" id="mtScore">
+            <br> Final Exam Score:
+            <br>
+            <input type="text" id="fnlExam">
+            <br> ACR Score:
+            <br>
+            <input type="text" id="ACRone">
+            <br>
+             
+           <input type="button" onclick="myfinalScore()" value="Show Results">&nbsp;&nbsp;<input type="reset" value="Reset" onclick="location.reload()">
+           <div id="myFinalGrade"></div>
+            
+        </form>
+        
+    </div>
+    <footer> <span><a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">
+            <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F" target="_blank">
+            <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="31" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+            </a></span></footer>
+</body>
+
+</html>
+<!-- Part 1: 
+
+Create a webpage that contains the heading, Student Grades, and a script that inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers). Be sure to check for valid input, i.e., that the input is between 0-100. Calculate the student's final average according to the formula:
+
+final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * ACR)
+
+Using form text boxes, display the student's final average (rounded to an integer) and final letter grade using the following: 
+
+
+90-100	A
+80-89	B
+70-79	C
+60-69	D
+0-59	F
+
+If the student's final grade is 'D' or 'F' then display "Student must retake the course". Be sure to check for valid input. Use jQuery to display 'Click to Show/Hide Instructions' above the table and upon clicking this then display 'The following webpage contains the heading, Student Grades, and uses a script that inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers)'. Calculate the student's final average according to the formula: final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * ACR) '. See this jQuery example: Show/Hide Panel (Links to an external site.) example.-->

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CNIT 133 HW 3, Pt 2 - Functions</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This page Inputs the number of items sold by a salesman for each item number sold for last week, calculates how much the salesperson sold and how much they earned, and then outputs the results.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background-color:black;
+        }
+        nav{
+             background-color:grey;
+             margin:0% 15%;
+            padding-left:10%;
+            border:3px solid black
+        }
+        ul{
+            position:relative;
+            display: inline-block;
+            margin: 20px;
+           
+        }
+        li{
+            list-style-type: none;
+           
+        }
+        a{
+             text-decoration: none;
+            font-weight:bold;
+        }
+        h1{
+            text-align:center;
+            color:white;
+           
+        }
+        table{
+            background-color:grey;
+              width:30%;
+              height:500px;
+              padding-left:0%;
+            position:absolute;
+             margin-left:15px;
+        }
+        tr{
+            
+           margin-top:5px;
+        }
+          .link{
+           border: 1px solid black;
+               padding:0px 10px;
+             
+        }
+        td:first-of-type{
+            border: 1px solid black;
+            padding:0px 20px;
+            font-size:18px;
+            font-weight:bold;
+        }
+        .wrapper{
+            background-color:grey;
+              width:65%;
+              height:800px;
+              padding:1px;
+              margin-right:15px;
+            float:right;
+            position: relative;
+            border: 3px solid black;
+        }
+        h2{
+            font-size:25px;
+            font-weight: bold;
+            text-align: center;
+            padding:5px 5px 5px 5px;
+        }
+        #frmTbl{
+            height:20px;
+            width:70%;
+            border:none; 
+            background-color: lightgreen;
+            margin-top:5px;
+        }
+          footer {
+                width: 100%;
+                height: 60px;
+                position: fixed;
+                bottom: 0;
+                color: black;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 20px;
+                padding-bottom:0px;
+            }
+        #submt{
+            margin-left:90px;
+            margin-bottom:10px;
+        }
+        textarea, input{
+            text-align: right;
+        }
+        
+    </style>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+  <script>
+       $( function() {
+    var tooltips = $( "[title]" ).tooltip({
+      position: {
+        my: "left top",
+        at: "right+5 top-5",
+        collision: "none"
+          
+          color:{
+          color: ""
+      }
+      }
+        
+    });
+    $( )
+      .on( "click", function() {
+        tooltips.tooltip( "open" );
+      })
+      .insertAfter( "form" );
+  } );
+  </script>
+
+</head>
+
+<body>
+    
+        
+          
+    <nav>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw1">HW 1</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw2">HW2</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw3">HW-3</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw4">HW-4</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw5">HW-5</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw6">HW-6</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw7.html">HW-7</a></li>
+        </ul>
+        <ul>
+            <li><a href="hw8.html">HW-8</a></li>
+        </ul>
+
+    </nav>
+    
+   <h1>CNIT 133 Homework 3 - Functions</h1>
+    <table>
+        <tr>
+           <td><a href="part1.html">Part: 1</a></td>
+            <td class="link">This page contains script that inputs a student's homework average, mid-term exam score, final exam score, and ACR. </td>
+        </tr>
+        <tr>
+            <td><a href="part2.html">Part: 2</a></td>
+            <td class="link">This page Inputs the number of items sold by a salesman for each item number sold for last week, calculates how 
+                much <br>the salesperson sold and how much they earned, and then outputs the results.</td>
+        </tr>
+        <tr>
+            <td><a href="part3.html">Part: 3</a></td>
+            <td class="link"> This page contains a script that will determine whether a department-store customer has exceeded the credit 
+                limit <br>on their charge account.</td>
+        </tr>
+        <tr>
+            <td><a href="part4.html">Part: 4</a></td>
+            <td class="link">Contains a script that inputs a five-digit integer (not starting with zero) that determines and outputs a message stating<br> whether or not it's a palindrome.</td>
+        </tr>
+        <tr>
+           <td><a href="part5.html">Part: 5</a></td>
+            <td class="link">This page has functions to write a script that enables the user to enter either a Fahrenheit or a Celsius temperature and <br>displays the Celsius or Fahrenheit equivalent.</td>
+        </tr>
+        <tr>
+            <td><a href="part6.html">Part: 6</a></td>
+            <td class="link">This page has a program that will help an elementary school student learn multiplication.</td>
+        </tr>
+    </table>
+    <div class="wrapper">
+    <h2>Part 2: Weekly Sales Report</h2>
+       
+        
+        
+              <form>
+      <label for="name">Salesman's Name:</label>
+      <input id="name" name="name" title="Please make sure name is spelled correctly.">
+    
+            <h3>List Number of Items Sold:</h3>
+            <br>
+              Item 1:   <input type="text" id="ione" onchange="calcIt()">
+            <br>
+              Item 2:   <input type="text" id="itwo" onchange="calcIt()">
+            <br>
+              Item 3:   <input type="text" id="ithree" onchange="calcIt()">
+            <br>
+              Item 4:   <input type="text" id="ifour" onchange="calcIt()">
+            <br>
+            <br>
+             <input type="button" value="submit" id="submt" onclick="calcIt()">
+              <input type="reset"  value="reset" onclick="location.reload()">
+        </form>
+        <table id="frmTbl">
+                <tr><th>Item:</th><th>Price:</th><th>Number Sold:</th><th>-</th><th>Total Sales:</th></tr>
+        
+            <tr><td>1-</td><td>239.99</td><td><textarea  class="ns" name="nums1" id="nums1"></textarea></td><td><td><textarea  class="ts" id="ts1" name="ts1"></textarea></td></tr>
+
+            <tr><td>2-</td><td>129.75</td><td><textarea  class="ns" id="nums2"></textarea></td><td><td><textarea  class="ts" id="ts2" name="ts2"></textarea></td></tr>
+            <tr><td>3-</td><td>99.95</td><td><textarea  class="ns" id="nums3" name="nums3"></textarea></td><td><td><textarea  class="ts" id="ts3" name="ts3"></textarea></td></tr>
+            <tr><td>4-</td><td>350.89</td><td><textarea  class="ns" id="nums4" name="nums4"></textarea></td><td><td><textarea  class="ts" id="ts4"></textarea></td></tr>
+            <tr><td colspan="4">Total Amount Sold:</td><td><textarea  id="amtSold" name="amtSold"></textarea></td></tr>
+            <tr><td colspan="4">Total Weekly Earnings:</td><td><textarea  id="wkEarnings" name="wkEarnings"></textarea></td>
+            </tr>
+           
+</table>
+    
+    </div>
+   
+     <script>
+         function calcIt(){
+             var ioner = document.getElementById("ione").value;
+             var itwor = document.getElementById("itwo").value;
+             var ithreer = document.getElementById("ithree").value;
+             var ifourr = document.getElementById("ifour").value;
+             var w = (ioner * 239.99).toFixed(2);
+              var x = (itwor * 129.75).toFixed(2);
+              var y = (ithreer * 99.95).toFixed(2);
+              var z = (ifourr * 350.89).toFixed(2); 
+             document.getElementById('nums1').innerHTML = ioner;
+             document.getElementById('nums2').innerHTML = itwor;
+             document.getElementById('nums3').innerHTML = ithreer;
+             document.getElementById('nums4').innerHTML = ifourr;
+             
+             document.getElementById('ts1').innerHTML = w;
+             document.getElementById('ts2').innerHTML = x;
+             document.getElementById('ts3').innerHTML = y;
+             document.getElementById('ts4').innerHTML = z;
+             var m =   + (w) +  + (x) +  + (y) +  + (z) ;
+             m = parseFloat(m);
+              m = Math.round(m * 100)/100;
+            
+              document.getElementById('amtSold').innerHTML = m.toFixed(2);
+             
+             var n = ((m * .09))+ +(200);
+              n = parseFloat(n);
+             n = Math.round(n * 100)/100;
+              document.getElementById('wkEarnings').innerHTML = n.toFixed(2);
+             if (isNaN(m)){
+                 alert("Enter numeric values only!")
+             }
+             
+             
+           
+             
+            
+             
+             
+             
+         }
+    </script>
+    
+    
+
+
+    
+    
+    
+    
+    
+   <footer> <span><a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">
+            <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw3%2F" target="_blank">
+            <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="31" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+            </a></span></footer>
+</body>
+
+</html>
+<!--Part 2: 
+
+A large company pays its salespeople on a commission basis. The salespeople receive $200 per week, plus 9% of their gross sales for that week. For example, a salesperson who sells $5000 worth of merchandise in a week receives $200 plus 9% of $5000, or a total of $650. You have been supplied with a list of the items sold by each salesperson. The value of these items are as follows:
+
+Item	Value
+1	239.99
+2	129.75
+3	99.95
+4	350.89
+Create a webpage that contains a script that includes at the top of your form  a text box for the salesperson's name for the user to enter. When the user's mouse hovers over this name field, use the jQuery UI tooltip coding to display the message "Please make sure that the salesperson's name is spelled correctly". See this site for more about the jQuery UI tooltip (Links to an external site.). Next input that salesperson's items sold for last week, calculates how much the salesperson sold and how much they earned, and then output the results. Be sure to round the outputted results to 2 decimal places. Use form text boxes to input the number sold for each of the items 1-4. You should also check for valid numeric input and right-justify all amounts. Here is a sample display (Links to an external site.) using tables and form elements.   -->
+
+
